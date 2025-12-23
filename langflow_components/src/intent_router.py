@@ -20,27 +20,28 @@ class IntentRouter(CustomComponent):
     ]
 
     def route_intent(self) -> Data:
-        """
-        Simple keyword-based routing. 
-        In production, this would be an LLM call, but for this architecture demo, 
-        deterministic logic is faster and proves the 'Routing' concept effectively.
-        """
         query = self.user_query.lower()
         
-        # 1. Define Keywords
-        tech_keywords = ["api", "python", "code", "websocket", "database", "schema", "token", "auth"]
-        biz_keywords = ["price", "cost", "roi", "competitor", "market", "revenue", "value", "sales"]
+        # 1. Expanded Keywords
+        tech_keywords = [
+            "api", "python", "code", "websocket", "database", "schema", 
+            "token", "auth", "key", "connect", "integrate", "endpoint", "sdk"
+        ]
+        biz_keywords = [
+            "price", "pricing", "cost", "how much", "roi", "competitor", 
+            "market", "revenue", "value", "sales", "license", "subscription",
+            "business", "strategy"
+        ]
 
-        # 2. Logic
-        intent = "general" # Default
+        # 2. Logic (Prioritize Business if ambiguous keywords like 'value' appear)
+        intent = "general" 
         
-        # Check Technical
         if any(word in query for word in tech_keywords):
             intent = "technical"
-        # Check Business (overrides technical if ambiguous for this demo, or creates a hierarchy)
         elif any(word in query for word in biz_keywords):
             intent = "business"
 
-        # 3. Return Result
-        # We return it as a Data object so it can be passed to the Retriever
+        # Debug Print to Console
+        print(f"🔀 ROUTER DEBUG: Query='{query}' -> Intent='{intent}'")
+
         return Data(data={"text": intent})
