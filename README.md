@@ -2,6 +2,10 @@
 
 > **Multi-Layer Context Orchestration for Global Business Logic.**
 
+[![Meridian Demo](https://img.youtube.com/vi/w8wlRdG_ufo/maxresdefault.jpg)](https://youtu.be/w8wlRdG_ufo)
+
+> 📺 **[Watch the full end-to-end demo](https://youtu.be/w8wlRdG_ufo)** featuring core functionalities.
+
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
 ![Supabase](https://img.shields.io/badge/Supabase-PGVector-green?style=for-the-badge&logo=supabase)
 ![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-red?style=for-the-badge&logo=streamlit)
