@@ -1,4 +1,4 @@
-# Meridian -- The Intelligent Market Consultant
+# Meridian | The Intelligent Market Consultant
 
 > **Multi-Layer Context Orchestration for Global Business Logic.**
 
